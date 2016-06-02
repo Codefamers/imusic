@@ -4,10 +4,15 @@ import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.Toast;
 
 
@@ -37,15 +42,46 @@ public class MainActivity extends AppCompatActivity {
     ViewPager viewPager;
     @ViewInject(R.id.sliding_tabs)
     TabLayout tabLayout;
+    @ViewInject(R.id.toolbar)
+    Toolbar toolbar;
+    @ViewInject(R.id.drawer)
+    DrawerLayout drawerLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         x.view().inject(this);
         initView();
 
     }
 
     private void initView() {
+        toolbar.setNavigationIcon(R.drawable.ic_reorder);
+        toolbar.inflateMenu(R.menu.toolbar_menu);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout.openDrawer(Gravity.LEFT);
+               // Toast.makeText(MainActivity.this, "点击侧边栏", Toast.LENGTH_SHORT).show();
+            }
+        });
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.action_search:
+                        Intent in=new Intent(MainActivity.this,SearchMusicActivity.class);
+                        startActivity(in);
+                        //Toast.makeText(MainActivity.this, "点击搜索框", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+                return true;
+            }
+        });
+
+
+
+
         fragmentList=new ArrayList<>();
         myMusicFragment=new MyMusicFragment();
         musicCaseFragment=new MusicCaseFragment();

@@ -31,7 +31,7 @@ public class CustomSearchView extends SearchView{
         //获取输入框对象
         EditText searchPlate= (EditText) this.findViewById(searchPlateId);
         searchPlate.setBackground(null);
-        searchPlate.setBackgroundResource(android.R.color.darker_gray);
+       // searchPlate.setBackgroundResource(android.R.color.darker_gray);
         int search_mag_icon_id=this.getContext().getResources().getIdentifier("android:id/search_mag_icon", null, null);
         ImageView search_icon=(ImageView) this.findViewById(search_mag_icon_id);
 

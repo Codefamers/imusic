@@ -22,7 +22,7 @@
             android:iconifiedByDefault="false"
             android:imeOptions="actionSearch"
             android:paddingRight="5dp"
-            android:queryHint="输入城市名搜索(中文)" >
+             >
         </com.example.admins.imusic.view.CustomSearchView>
     </LinearLayout>
 

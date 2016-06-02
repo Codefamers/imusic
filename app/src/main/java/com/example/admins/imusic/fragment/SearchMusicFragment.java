@@ -61,11 +61,11 @@ public class SearchMusicFragment extends Fragment{
                             JSONObject jsonObject = new JSONObject(result);
                             Gson gson=new Gson();
                             SearchMusicJSON searchMusicJSon=gson.fromJson(jsonObject.toString(),SearchMusicJSON.class);
-                            Log.d(TAG, "OnSuccess: "+searchMusicJSon.song.size());
+                           // Log.d(TAG, "OnSuccess: "+searchMusicJSon.song.size());
                             ArrayList<SearchMusicJSON.Song> songInfoList= (ArrayList<SearchMusicJSON.Song>) searchMusicJSon.song;
 
-                            SearchMusicJSON.Song songInfo= gson.fromJson(searchMusicJSon.song.get(0).toString(), SearchMusicJSON.Song.class);
-                            Log.d(TAG, "OnSuccess: song"+songInfo.artistname+"\n"+songInfo.songname);
+                           /* SearchMusicJSON.Song songInfo= gson.fromJson(searchMusicJSon.song.get(0).toString(), SearchMusicJSON.Song.class);
+                            Log.d(TAG, "OnSuccess: song"+songInfo.artistname+"\n"+songInfo.songname);*/
 
                         } catch (JSONException e) {
                             e.printStackTrace();
