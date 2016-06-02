@@ -24,7 +24,6 @@
             android:parentActivityName=".activity.MainActivity" />
         <activity
             android:name=".activity.SearchMusicActivity"
-            android:label="@string/title_activity_search_music"
             android:parentActivityName=".activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
