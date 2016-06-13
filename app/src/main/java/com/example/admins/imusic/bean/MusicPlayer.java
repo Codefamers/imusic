@@ -111,8 +111,15 @@ public class MusicPlayer implements MediaPlayer.OnBufferingUpdateListener, Media
             mediaPlayer.stop();
         }
     }
-   
-    
+
+    public void getPlayPosition() {
+        //return playPosition;
+        Log.d(TAG, "getPlayPosition: "+ mediaPlayer.getDuration());
+        Log.d(TAG, "getPlayPosition: "+ mediaPlayer.getCurrentPosition());
+        //Log.d(TAG, "getPlayPosition: "+ mediaPlayer.get);
+        //Log.d(TAG, "getPlayPosition: "+ mediaPlayer.getDuration());
+
+    }
     private void playNet(int position) {
         mediaPlayer.reset();//初始化各项参数
         /**

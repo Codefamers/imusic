@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -71,7 +72,8 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.action_search:
                         Intent in=new Intent(MainActivity.this,SearchMusicActivity.class);
-                        startActivity(in);
+                       startActivity(in);
+
                         //Toast.makeText(MainActivity.this, "点击搜索框", Toast.LENGTH_SHORT).show();
                         break;
                 }
@@ -98,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
     private void onClickPlayLayout(View v){
         switch (v.getId()){
             case R.id.layout_music_player:
-                Toast.makeText(MainActivity.this, "点击播放布局", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, "点击播放布局", Toast.LENGTH_SHORT).show();
                 Intent in=new Intent(MainActivity.this,PlayMusicActivity.class);
                 startActivity(in);
                 break;
@@ -112,4 +114,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    /*@Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.findItem(R.id.searchView).getActionView();
+        return super.onCreateOptionsMenu(menu);
+    }*/
 }

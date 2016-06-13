@@ -5,6 +5,7 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -29,7 +30,7 @@ public class PlayMusicActivity extends AppCompatActivity {
     private Uri uri;
     private String musicPath;
     private MusicPlayer musicPlayer;
-
+    private static final String TAG = "PlayMusicActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +38,9 @@ public class PlayMusicActivity extends AppCompatActivity {
         musicPath ="http://ws.stream.qqmusic.qq.com/106396897.m4a?fromtag=46" ;
         uri=Uri.parse(musicPath);
         musicPlayer=new MusicPlayer(uri, seekBar);
+       // musicPlayer.
+        Log.d(TAG, "onCreate: "+musicPlayer);
+        Toast.makeText(PlayMusicActivity.this, "", Toast.LENGTH_SHORT).show();
 
     }
     @Event(value ={R.id.img_loop,R.id.img_last_song,R.id.img_next_song,R.id.img_play_list,R.id.img_play_song},type = View.OnClickListener.class)
@@ -59,6 +63,7 @@ public class PlayMusicActivity extends AppCompatActivity {
                 musicPlayer.replay();
                 break;
             case R.id.img_play_list:
+                musicPlayer.getPlayPosition();
                 Toast.makeText(PlayMusicActivity.this, "点击循环按钮", Toast.LENGTH_SHORT).show();
                 break;
 
