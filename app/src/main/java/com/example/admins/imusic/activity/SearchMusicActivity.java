@@ -42,12 +42,7 @@ public class SearchMusicActivity extends AppCompatActivity {
     }
 
     private void initData() {
-        OkHttpUtils.okHttpGet(YiYuanUrl.getHotMusicUrl(5), new OkHttpUtils.OnDataFinish() {
-            @Override
-            public void OnSuccess(String result) {
 
-            }
-        });
     }
 
 
