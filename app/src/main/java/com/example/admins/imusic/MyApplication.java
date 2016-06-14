@@ -8,6 +8,7 @@ import org.xutils.x;
 
 public class MyApplication extends Application{
     public static Context context;
+
     private static MyApplication myApp;
     public static MyApplication getMyAppInstance(){
         if(myApp==null){

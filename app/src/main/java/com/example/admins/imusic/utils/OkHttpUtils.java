@@ -31,26 +31,23 @@ public class OkHttpUtils {
     //get请求
     public static void okHttpGet( String url,final OnDataFinish onDataFinish){
         Request  request = new Request.Builder().url(url).build();
-       /* try {
-            Response response=OkHttpUtils.getClientInstance().newCall(request).execute();
-            Log.d(TAG, "okHttpGet: "+response.body().toString());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
         OkHttpUtils.getClientInstance().newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Request request, IOException e) {
-
+                //Log.d(TAG, "onFailure: "+);
+                e.printStackTrace();
             }
 
             @Override
             public void onResponse(Response response) throws IOException {
                 final String result = response.body().string();
                 int code = response.code();
+                Log.d(TAG, "run: "+code);
                 if (200 <= code && code <= 300) {
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
+
                             onDataFinish.OnSuccess(result);
                         }
                     });
