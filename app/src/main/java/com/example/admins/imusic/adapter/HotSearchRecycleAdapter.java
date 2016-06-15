@@ -21,13 +21,13 @@ public class HotSearchRecycleAdapter extends RecyclerView.Adapter<HotSearchRecyc
     private static final String TAG = "HotSearchRecycleAdapter";
     private final Context mContext;
     private HotSearchRecycleAdapter.ContentHolder contentHolder;//视图缓存holder
-    private List<MusicInfo> musicInfoList;//数据集合
+    private ArrayList<MusicInfo> musicInfoList;//数据集合
     private List<View> musicViewList;//视图集合
     private View itemView;//需要加载的itemView
 
     public HotSearchRecycleAdapter(List<MusicInfo> musicInfoList) {
         Log.d(TAG, "onCreateViewHolder: " + "2222");
-        this.musicInfoList = musicInfoList;
+        this.musicInfoList = (ArrayList<MusicInfo>) musicInfoList;
         mContext = MyApplication.getContext();
         itemView = LayoutInflater.from(mContext).inflate(R.layout.hot_music_search_item, null, false);//获取recyclerview中的itemview
         musicViewList = new ArrayList<>();
@@ -45,7 +45,7 @@ public class HotSearchRecycleAdapter extends RecyclerView.Adapter<HotSearchRecyc
     public void addItem() {
     }
 
-    ;
+
 
     //移除一条数据
     public void removeItem() {
@@ -77,7 +77,7 @@ public class HotSearchRecycleAdapter extends RecyclerView.Adapter<HotSearchRecyc
     //数据itemview的数量
     @Override
     public int getItemCount() {
-        return 3;
+        return musicInfoList.size();
         //return musicInfoList.size();
     }
 
