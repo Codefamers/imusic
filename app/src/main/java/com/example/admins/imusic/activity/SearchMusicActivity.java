@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import com.example.admins.imusic.R;
 import com.example.admins.imusic.adapter.SearchUIPagerAdapter;
-import com.example.admins.imusic.utils.OkHttpUtils;
 import com.example.admins.imusic.utils.YiYuanUrl;
 
 import org.xutils.view.annotation.ContentView;
@@ -79,7 +78,7 @@ public class SearchMusicActivity extends AppCompatActivity {
 
         //热门搜索页面
         View hotMusicView= LayoutInflater.from(this).inflate(R.layout.hot_search,null);
-        View view2= LayoutInflater.from(this).inflate(R.layout.my_music,null);
+        View view2 = LayoutInflater.from(this).inflate(R.layout.frgment_my_music, null);
         searchViewList.add(view2);
         searchViewList.add(hotMusicView);
 

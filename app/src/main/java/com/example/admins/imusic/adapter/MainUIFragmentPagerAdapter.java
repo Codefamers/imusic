@@ -13,7 +13,7 @@ import java.util.List;
 public class MainUIFragmentPagerAdapter extends FragmentPagerAdapter{
     private List<Fragment> frgList;
     private Context context;
-    private  String tabTitles[]={"我的音乐","音乐架","搜索"};
+    private String tabTitles[] = {"本地", "推荐", "MV"};
     public MainUIFragmentPagerAdapter(FragmentManager fm, List<Fragment> frgList) {
         super(fm);
         this.frgList=frgList;

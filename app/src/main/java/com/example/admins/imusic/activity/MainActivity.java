@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
         frgPagerAdapter=new MainUIFragmentPagerAdapter(getSupportFragmentManager(),fragmentList);
         viewPager.setAdapter(frgPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
-        tabLayout.setTabMode(TabLayout.MODE_FIXED);
+        // tabLayout.setTabMode(TabLayout.MODE_FIXED);
     }
     @Event(value={R.id.layout_music_player,R.id.image_button_next_song,R.id.image_button_pause_song},type =View.OnClickListener.class)
     private void onClickPlayLayout(View v){

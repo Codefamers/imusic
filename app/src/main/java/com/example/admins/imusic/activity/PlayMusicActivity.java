@@ -1,5 +1,6 @@
 package com.example.admins.imusic.activity;
 
+import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -35,14 +36,23 @@ public class PlayMusicActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         x.view().inject(this);
-        musicPath ="http://ws.stream.qqmusic.qq.com/106396897.m4a?fromtag=46" ;
+        initData();
+        /*musicPath ="http://ws.stream.qqmusic.qq.com/106396897.m4a?fromtag=46" ;
         uri=Uri.parse(musicPath);
         musicPlayer=new MusicPlayer(uri, seekBar);
        // musicPlayer.
         Log.d(TAG, "onCreate: "+musicPlayer);
         Toast.makeText(PlayMusicActivity.this, "", Toast.LENGTH_SHORT).show();
-
+*/
     }
+
+    private void initData() {
+        Intent in = getIntent();
+        musicPath = in.getStringExtra("URL");
+        uri = Uri.parse(musicPath);
+        musicPlayer = new MusicPlayer(uri, seekBar);
+    }
+
     @Event(value ={R.id.img_loop,R.id.img_last_song,R.id.img_next_song,R.id.img_play_list,R.id.img_play_song},type = View.OnClickListener.class)
     private void clickImageView(View v){
         switch (v.getId()){
