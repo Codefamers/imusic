@@ -18,23 +18,23 @@ import org.xutils.x;
 
 @ContentView(R.layout.frgment_my_music)
 public class MyMusicFragment extends Fragment {
-    @ViewInject(R.id.img_click)
-    ImageView imgClick;
-    @ViewInject(R.id.ll_show)
-    LinearLayout llShow;
+    /* @ViewInject(R.id.img_click)
+     ImageView imgClick;
+     @ViewInject(R.id.ll_show)
+     LinearLayout llShow;*/
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
         // View view=inflater.inflate(R.layout.frgment_my_music,container,false);
         View view = x.view().inject(this, inflater, container);
 
-        imgClick.setOnClickListener(new View.OnClickListener() {
+        /*imgClick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //第一个view参数是点击后修改的对象控件，第二个view参数是需要隐藏显示的布局控件，第三个参数是动画持续时间，单位毫秒
                 ExpandAnimation animation = new ExpandAnimation(imgClick, llShow, 500);
                 llShow.startAnimation(animation);
             }
-        });
+        });*/
         return view;
     }
 }
