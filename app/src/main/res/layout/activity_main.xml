@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
-            android:src="@drawable/list_play_state"/>
+            android:src="@mipmap/list_play_state" />
         <ImageButton
             android:id="@+id/image_button_pause_song"
             android:background="@null"
@@ -81,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:src="@drawable/list_pause_state"/>
+            android:src="@mipmap/list_pause_state" />
 
     </RelativeLayout>
     </LinearLayout>

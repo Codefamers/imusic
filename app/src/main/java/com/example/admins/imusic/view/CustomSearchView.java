@@ -35,6 +35,6 @@ public class CustomSearchView extends SearchView{
         int search_mag_icon_id=this.getContext().getResources().getIdentifier("android:id/search_mag_icon", null, null);
         ImageView search_icon=(ImageView) this.findViewById(search_mag_icon_id);
 
-        search_icon.setImageResource(R.drawable.ic_action_search);
+        search_icon.setImageResource(R.mipmap.ic_action_search);
     }
 }

@@ -9,12 +9,13 @@
     android:fadingEdge="none"
     card_view:cardCornerRadius="4dp">
 
-    <RelativeLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ListView
-            android:id="@+id/list_view_music_manager"
+            android:id="@+id/lv_music_manager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -30,8 +31,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="8dp"
+                android:layout_centerVertical="true"
+
                 android:tint="@android:color/darker_gray"
-                android:src="@drawable/ic_chevron_right_white_24dp" />
+                android:src="@mipmap/ic_chevron_right_white_24dp" />
 
             <TextView
                 android:id="@+id/txt_item_title"
@@ -49,28 +52,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="8dp"
+                android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
                 android:tint="@android:color/darker_gray"
-                android:src="@drawable/ic_more_vert_white_24dp" />
+                android:src="@mipmap/ic_menu_moreoverflow_mtrl_alpha" />
         </RelativeLayout>
-        <!-- <ImageView
-             android:id="@+id/img_click"
-             android:layout_gravity="center_horizontal"
-             android:layout_width="80dp"
-             android:layout_height="wrap_content"
-             android:layout_below=""
-             android:tint="#000"
-             android:src="@drawable/loop"/>-->
+
         <LinearLayout
             android:id="@+id/ll_show"
-
+            android:layout_below="@id/img_item_title_option"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:background="#fff"
             android:orientation="vertical"
             android:visibility="gone"
-            android:layout_marginBottom="-1dp"
-            android:background="#cccccc">
+            android:layout_marginBottom="-1dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -79,5 +76,37 @@
                 android:text="我就是隐藏的内容"
                 android:layout_marginTop="10dp" />
         </LinearLayout>
-    </RelativeLayout>
+
+        <ListView
+            android:id="@+id/lv_album_detail_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- <ImageView
+             android:id="@+id/img_click"
+             android:layout_gravity="center_horizontal"
+             android:layout_width="80dp"
+             android:layout_height="wrap_content"
+             android:layout_below=""
+             android:tint="#000"
+             android:src="@drawable/loop"/>-->
+        <!-- <LinearLayout
+             android:id="@+id/ll_show"
+
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:gravity="center"
+             android:orientation="vertical"
+             android:visibility="gone"
+             android:layout_marginBottom="-1dp"
+             android:background="#cccccc">
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textColor="#000"
+                 android:text="我就是隐藏的内容"
+                 android:layout_marginTop="10dp" />
+         </LinearLayout>-->
+    </LinearLayout>
 </android.support.v7.widget.CardView>

@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        toolbar.setNavigationIcon(R.drawable.ic_reorder);
+        toolbar.setNavigationIcon(R.mipmap.ic_reorder);
         toolbar.inflateMenu(R.menu.toolbar_menu);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

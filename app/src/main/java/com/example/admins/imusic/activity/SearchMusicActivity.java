@@ -60,7 +60,7 @@ public class SearchMusicActivity extends AppCompatActivity {
                 Toast.makeText(SearchMusicActivity.this, "点击返回按钮", Toast.LENGTH_SHORT).show();
             }
         });
-        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white);
+        toolbar.setNavigationIcon(R.mipmap.ic_arrow_back_white);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
